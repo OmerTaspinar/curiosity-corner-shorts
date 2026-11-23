@@ -10,7 +10,7 @@ const srv = await serve(ROOT);
 const browser = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist', '--disable-gpu-vsync'] });
 const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
 page.on('pageerror', e => console.log('PAGE ERROR', e.message)); page.on('console', m => { if (m.type() === 'error') console.log('console:', m.text()); });
-await page.goto(`http://127.0.0.1:${srv.address().port}/engine/stage.html?ep=${ep}`);
+await page.goto(`http://127.0.0.1:${srv.address().port}/engine/stage.html?ep=${ep}${process.argv.includes('--clean') ? '&clean=1' : ''}`);
 await page.waitForFunction('window.ready === true', null, { timeout: 120000 });
 const info = await page.evaluate('window.EPINFO');
 const grab = t => page.evaluate(t => { window.renderAt(t); return document.querySelector('canvas').toDataURL('image/jpeg', 0.95).split(',')[1]; }, t).then(b => Buffer.from(b, 'base64'));

@@ -42,7 +42,7 @@ for i, (slug, title, desc, extra) in enumerate(V):
     hashtags = "#shorts #science #didyouknow " + "#" + extra[0].replace(" ", "")
     full = f"{desc}\n\nFollow Curiosity Corner for a new mind-blowing fact every day.\n\n{hashtags}"
     rows.append({"day": i + 1, "date": (start + datetime.timedelta(days=i)).isoformat(), "time": "20:00 (TR) / 12:00 ET", "slug": slug,
-                 "file": f"{slug}.mp4", "download": REL + f"{slug}.mp4", "title": title, "description": full, "tags": ", ".join(tags),
+                 "file": f"{slug}.mp4", "download": REL + f"{slug}.mp4", "cover": f"https://raw.githubusercontent.com/OmerTaspinar/curiosity-corner-shorts/main/covers/{i + 1:02d}-{slug}.jpg", "title": title, "description": full, "tags": ", ".join(tags),
                  "pinned_comment": "Did you know this one already? Tell me in the comments 👇", "category": "Education", "audience": "Not made for kids"})
 json.dump(rows, open(os.path.join(HERE, "upload_kit.json"), "w"), indent=1, ensure_ascii=False)
 with open(os.path.join(HERE, "upload_kit.csv"), "w", newline="", encoding="utf-8") as f:
@@ -53,7 +53,7 @@ def card(r):
     def field(label, val, mono=False):
         return f'<div class="f"><div class="fl">{label}<button onclick="cp(this)">Kopyala</button></div><div class="fv{" mono" if mono else ""}">{e(val)}</div></div>'
     return f'''<section class="card" data-q="{e((r["title"]+" "+r["slug"]).lower())}"><header><span class="day">GÜN {r["day"]}</span><span class="date">{r["date"]} · {e(r["time"])}</span>
-<a class="dl" href="{r["download"]}">Videoyu indir ↓</a></header>{field("Başlık", r["title"])}{field("Açıklama", r["description"])}{field("Etiketler", r["tags"], True)}{field("Sabit yorum", r["pinned_comment"])}
+<a class="dl" href="{r["download"]}">Videoyu indir ↓</a><a class="dl" style="margin-left:14px" href="{r["cover"]}">Kapak ↓</a></header>{field("Başlık", r["title"])}{field("Açıklama", r["description"])}{field("Etiketler", r["tags"], True)}{field("Sabit yorum", r["pinned_comment"])}
 <div class="meta">Kategori: {r["category"]} · Kitle: {r["audience"]} · Dosya: {e(r["file"])}</div></section>'''
 
 page = f'''<!DOCTYPE html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Curiosity Corner — 30 günlük yükleme kiti</title>

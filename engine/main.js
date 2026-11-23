@@ -49,4 +49,5 @@ window.renderAt = (t) => {
   stage.render(t);
 };
 window.EPINFO = { duration: timing.duration, scenes: scenes.map(s => ({ id: s.id, t0: s.t0, t1: s.t1 })) };
+if (new URLSearchParams(location.search).get('clean')) stage.overlay.visible = false;
 window.STAGE = stage; window.ready = true;
