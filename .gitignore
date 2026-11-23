@@ -1,4 +1,4 @@
-node_modules/
+node_modules
 models/
 episodes/*/build/
 episodes/*/*.mp4
