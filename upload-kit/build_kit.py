@@ -42,7 +42,7 @@ for i, (slug, title, desc, extra) in enumerate(V):
     hashtags = "#shorts #science #didyouknow " + "#" + extra[0].replace(" ", "")
     full = f"{desc}\n\nFollow Curiosity Corner for a new mind-blowing fact every day.\n\n{hashtags}"
     rows.append({"day": i + 1, "date": (start + datetime.timedelta(days=i)).isoformat(), "time": "20:00 (TR) / 12:00 ET", "slug": slug,
-                 "file": f"{slug}.mp4", "download": REL + f"{slug}.mp4", "cover": f"https://raw.githubusercontent.com/OmerTaspinar/curiosity-corner-shorts/main/covers/{i + 1:02d}-{slug}.jpg", "title": title, "description": full, "tags": ", ".join(tags),
+                 "file": f"{i + 1:02d}-{slug}.mp4", "download": REL + f"{i + 1:02d}-{slug}.mp4", "cover": REL + f"{i + 1:02d}-{slug}-cover.jpg", "title": title, "description": full, "tags": ", ".join(tags),
                  "pinned_comment": "Did you know this one already? Tell me in the comments 👇", "category": "Education", "audience": "Not made for kids"})
 json.dump(rows, open(os.path.join(HERE, "upload_kit.json"), "w"), indent=1, ensure_ascii=False)
 with open(os.path.join(HERE, "upload_kit.csv"), "w", newline="", encoding="utf-8") as f:

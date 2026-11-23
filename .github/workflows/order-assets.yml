@@ -1,0 +1,26 @@
+# Renames release videos to "<day>-<slug>.mp4" (so they list in posting order) and attaches the covers.
+name: Order release assets
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/order-assets.yml, upload-kit/upload_kit.json, covers/**]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  order:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rename videos and upload covers
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          REL_ID=$(gh api repos/${{ github.repository }}/releases/tags/videos --jq .id)
+          gh api repos/${{ github.repository }}/releases/$REL_ID/assets --paginate --jq '.[] | "\(.id) \(.name)"' > assets.txt
+          for row in $(jq -r '.[] | "\(.day)|\(.slug)"' upload-kit/upload_kit.json); do
+            day=$(printf "%02d" "${row%%|*}"); slug="${row##*|}"
+            id=$(awk -v n="$slug.mp4" '$2==n{print $1}' assets.txt)
+            if [ -n "$id" ]; then gh api -X PATCH repos/${{ github.repository }}/releases/assets/$id -f name="$day-$slug.mp4" >/dev/null && echo "renamed $slug -> $day-$slug.mp4"; fi
+            cp "covers/$day-$slug.jpg" "$day-$slug-cover.jpg"
+            gh release upload videos "$day-$slug-cover.jpg" --clobber
+          done
