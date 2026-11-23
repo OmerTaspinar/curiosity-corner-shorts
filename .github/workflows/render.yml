@@ -52,8 +52,10 @@ jobs:
       - name: Publish
         env: { GH_TOKEN: "${{ github.token }}" }
         run: |
-          cp episodes/${{ matrix.slug }}/${{ matrix.slug }}.mp4 "${{ matrix.slug }}.mp4"
-          gh release upload videos "${{ matrix.slug }}.mp4" --clobber
+          DAY=$(jq -r '.[] | select(.slug=="${{ matrix.slug }}") | .day' upload-kit/upload_kit.json 2>/dev/null)
+          NAME="${{ matrix.slug }}.mp4"; [ -n "$DAY" ] && NAME="$(printf %02d $DAY)-${{ matrix.slug }}.mp4"
+          cp episodes/${{ matrix.slug }}/${{ matrix.slug }}.mp4 "$NAME"
+          gh release upload videos "$NAME" --clobber
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
