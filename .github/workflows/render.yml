@@ -16,10 +16,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - id: q
-        run: echo "slugs=$(grep -v '^\s*#' render-queue.txt | grep -v '^\s*$' | jq -R . | jq -cs .)" >> "$GITHUB_OUTPUT"
+        run: |
+          echo "slugs=$(grep -v '^\s*#' render-queue.txt | grep -v '^\s*$' | jq -R . | jq -cs .)" >> "$GITHUB_OUTPUT"
       - name: Ensure release exists
         env: { GH_TOKEN: "${{ github.token }}" }
-        run: gh release view videos >/dev/null 2>&1 || gh release create videos --title "Curiosity Corner — rendered Shorts" --notes "Finished 1080x1920 Shorts. Upload metadata: see upload-kit/." --latest
+        run: |
+          gh release view videos >/dev/null 2>&1 || gh release create videos --title "Curiosity Corner - rendered Shorts" --notes "Finished 1080x1920 Shorts. Upload metadata is in upload-kit/." --latest
   render:
     needs: plan
     runs-on: ubuntu-latest
@@ -50,7 +52,6 @@ jobs:
       - name: Publish
         env: { GH_TOKEN: "${{ github.token }}" }
         run: |
-          N=$(grep -n "^${{ matrix.slug }}$" render-queue.txt | cut -d: -f1)
           cp episodes/${{ matrix.slug }}/${{ matrix.slug }}.mp4 "${{ matrix.slug }}.mp4"
           gh release upload videos "${{ matrix.slug }}.mp4" --clobber
       - uses: actions/upload-artifact@v4
