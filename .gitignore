@@ -1,0 +1,5 @@
+node_modules/
+models/
+episodes/*/build/
+episodes/*/*.mp4
+episodes/*/*.wav
