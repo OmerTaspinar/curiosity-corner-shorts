@@ -1,0 +1,15 @@
+<html><body style="margin:0"><script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js';
+import {RenderPass} from 'three/addons/postprocessing/RenderPass.js';
+import {UnrealBloomPass} from 'three/addons/postprocessing/UnrealBloomPass.js';
+const r=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true}); r.setSize(1080,1920); document.body.appendChild(r.domElement);
+const sc=new THREE.Scene(), cam=new THREE.PerspectiveCamera(35,1080/1920,.1,100); cam.position.z=8;
+const m=new THREE.Mesh(new THREE.TorusKnotGeometry(1,.35,300,48),new THREE.MeshStandardMaterial({color:0xff6655,emissive:0x331100}));
+sc.add(m,new THREE.DirectionalLight(0xffffff,3),new THREE.AmbientLight(0x404060));
+const c=new EffectComposer(r); c.addPass(new RenderPass(sc,cam)); c.addPass(new UnrealBloomPass(new THREE.Vector2(540,960),.8,.5,.2));
+window.go=(bloom)=>{const t0=performance.now();for(let i=0;i<10;i++){m.rotation.y=i*.1; bloom?c.render():r.render(sc,cam);} r.getContext().finish(); return (performance.now()-t0)/10;};
+window.cap=()=>{const t0=performance.now(); const d=r.domElement.toDataURL('image/jpeg',.93); return [performance.now()-t0, d.length];};
+window.ready=true; window.glinfo=r.getContext().getParameter(r.getContext().VERSION);
+</script></body></html>

@@ -1,0 +1,97 @@
+{
+ "slug": "stomach-growl",
+ "title": "Why your stomach growls",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "That growl isn't hunger.",
+   "visual": "stomachHero",
+   "kicker": "THAT GROWL\n*ISN'T* HUNGER",
+   "sfx": "impact",
+   "growl": [
+    [
+     0.0,
+     1.6
+    ]
+   ],
+   "captions": false
+  },
+  {
+   "id": "trash",
+   "text": "It's your stomach... taking out the trash.",
+   "visual": "stomachSweep",
+   "kicker": "TAKING OUT\nTHE *TRASH*",
+   "sfx": "whoosh",
+   "kickerWord": 3
+  },
+  {
+   "id": "clock",
+   "text": "About two hours after you eat, your gut starts a cleaning cycle.",
+   "visual": "clock",
+   "kicker": "*2 HOURS*",
+   "sfx": "whoosh",
+   "kickerSub": "AFTER YOU EAT",
+   "kickerWord": 1,
+   "ticks": true
+  },
+  {
+   "id": "wave",
+   "text": "Powerful waves of muscle squeeze from your stomach into your intestines, sweeping out the leftovers.",
+   "visual": "peristalsis",
+   "sfx": "whoosh",
+   "growl": [
+    [
+     2.2,
+     1.4
+    ]
+   ]
+  },
+  {
+   "id": "gas",
+   "text": "With no food inside to muffle it, trapped air and gas get squeezed through the tubes.",
+   "visual": "bubbles",
+   "sfx": "whoosh",
+   "beats": [
+    1.0,
+    3.0
+   ]
+  },
+  {
+   "id": "echo",
+   "text": "That echo is the growl. Scientists call it borborygmi.",
+   "visual": "soundwave",
+   "kicker": "*BORBORYGMI*",
+   "sfx": "impact",
+   "pron": {
+    "borborygmi": "b\u02cc\u0254\u02d0\u0279b\u0259\u0279\u02c8\u026a\u0261ma\u026a"
+   },
+   "growl": [
+    [
+     0.0,
+     2.4
+    ]
+   ],
+   "kickerSub": "BOR \u00b7 BUH \u00b7 RIG \u00b7 MY",
+   "kickerWord": 8
+  },
+  {
+   "id": "outro",
+   "text": "So when your stomach rumbles, it's not complaining. It's cleaning.",
+   "visual": "stomachOutro",
+   "kicker": "IT'S\n*CLEANING.*",
+   "sfx": "riser",
+   "kickerWord": 8,
+   "sparkle": true,
+   "growl": [
+    [
+     0.3,
+     0.9
+    ]
+   ]
+  }
+ ]
+}
