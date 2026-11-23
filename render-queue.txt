@@ -1,1 +1,2 @@
+# one slug per line; pushing this file renders them
 stomach-growl
