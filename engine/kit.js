@@ -110,7 +110,7 @@ export function createStage(canvasParent = document.body) {
   const stage = {
     renderer, scene, camera, overlay, ocam, composer, bloom, fx, bg, bgMat, dust,
     // world position -> overlay pixel coords (origin centre, +y up)
-    project(v) { _pv.copy(v).project(camera); return { x: _pv.x * W / 2, y: _pv.y * H / 2, behind: _pv.z > 1 }; },
+    project(v) { camera.updateMatrixWorld(); _pv.copy(v).project(camera); return { x: _pv.x * W / 2, y: _pv.y * H / 2, behind: _pv.z > 1 }; },
     setTheme(name) { const t = THEMES[name] || THEMES.default; bgMat.uniforms.uTop.value.copy(t.top); bgMat.uniforms.uBot.value.copy(t.bot);
       bgMat.uniforms.uGlow.value.copy(t.glow); dust.material.uniforms.uOpacity.value = t.dust ?? 1; },
     shake: 0, // camera shake amount set by scenes per frame
@@ -131,7 +131,7 @@ export function createStage(canvasParent = document.body) {
 
 export const THEMES = {
   default: { top: new THREE.Color('#1b1145'), bot: new THREE.Color('#05040f'), glow: new THREE.Color('#ff5a7a') },
-  space:   { top: new THREE.Color('#070b24'), bot: new THREE.Color('#010106'), glow: new THREE.Color('#3a6bff'), dust: 1.4 },
+  space:   { top: new THREE.Color('#050818'), bot: new THREE.Color('#010104'), glow: new THREE.Color('#1c2f7a'), dust: 1.2 },
   sky:     { top: new THREE.Color('#0d2a6b'), bot: new THREE.Color('#05081c'), glow: new THREE.Color('#4fb3ff') },
   ocean:   { top: new THREE.Color('#06354a'), bot: new THREE.Color('#020a12'), glow: new THREE.Color('#2fd6c8') },
   fire:    { top: new THREE.Color('#3a0d12'), bot: new THREE.Color('#0a0305'), glow: new THREE.Color('#ff7a2a') },
@@ -373,7 +373,7 @@ export class Captions {
     this.chunks.forEach((ch, i) => {
       const g = this.group.children[i], d = g.userData;
       const next = this.group.children[i + 1]?.userData.s ?? d.e + 0.6;
-      const end = Math.min(next, d.e + 0.6);
+      const end = Math.min(next - 0.05, d.e + 0.6);
       g.visible = t >= d.s - 0.05 && t < end;
       if (!g.visible) return;
       const lt = t - (d.s - 0.05), p = spring(lt, 18, 0.35);
@@ -393,6 +393,7 @@ export class Captions {
 export function soundRing(color = PAL.cyan) {
   const m = new THREE.Mesh(new THREE.TorusGeometry(1, 0.025, 8, 128),
     new THREE.MeshBasicMaterial({ color, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false, toneMapped: false }));
+  m.visible = false;
   m.update = (age, life = 1.2, r0 = 1, r1 = 3.2) => {
     const k = age / life; m.visible = k > 0 && k < 1; if (!m.visible) return;
     const r = lerp(r0, r1, ease.outCubic(k)); m.scale.set(r, r, r); m.material.opacity = (1 - k) * (1 - k) * 1.6;
@@ -438,7 +439,7 @@ export class DynText {
     if (o.glow) { x.shadowColor = o.glow; x.shadowBlur = o.size * 0.3; x.fillStyle = o.glow; x.fillText(str, cx, cy); x.shadowBlur = 0; }
     x.shadowColor = 'rgba(0,0,0,.7)'; x.shadowBlur = o.size * 0.15; x.shadowOffsetY = o.size * 0.05;
     if (o.strokeW) { x.strokeStyle = o.stroke; x.lineWidth = o.strokeW * 2; x.strokeText(str, cx, cy); }
-    x.shadowColor = 'transparent'; x.fillStyle = o.fill; x.fillText(str, cx, cy); this.tex.needsUpdate = true;
+    x.shadowColor = 'transparent'; x.fillStyle = o.fill; x.fillText(str, cx, cy); this.textW = x.measureText(str).width; this.tex.needsUpdate = true;
   }
 }
 // small annotation pinned to a 3D point (drawn crisp in the overlay)

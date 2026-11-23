@@ -1,0 +1,76 @@
+{
+ "slug": "round-bubbles",
+ "title": "Why every bubble is round",
+ "theme": "default",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Every bubble is round. Why?",
+   "visual": "bubble",
+   "mode": "hero",
+   "kicker": "WHY ARE BUBBLES\n*ROUND*?",
+   "captions": false,
+   "fx": [
+    [
+     "bloop",
+     0.8
+    ]
+   ]
+  },
+  {
+   "id": "square",
+   "text": "Even if you blow through a square wand, the bubble ends up round.",
+   "visual": "bubble",
+   "mode": "square",
+   "fx": [
+    [
+     "bloop",
+     2.4
+    ]
+   ]
+  },
+  {
+   "id": "tension",
+   "text": "Soap film is under tension, constantly pulling itself as tight as it can.",
+   "visual": "bubble",
+   "mode": "tension",
+   "kicker": "SURFACE\n*TENSION*",
+   "kickerWord": 4
+  },
+  {
+   "id": "sphere",
+   "text": "For the air trapped inside, the shape with the smallest possible surface is a sphere.",
+   "visual": "bubble",
+   "mode": "sphere",
+   "kicker": "*SPHERE*",
+   "kickerWord": 14
+  },
+  {
+   "id": "squeeze",
+   "text": "So the film squeezes until every corner is gone.",
+   "visual": "bubble",
+   "mode": "squeeze",
+   "fx": [
+    [
+     "swoosh",
+     0.5,
+     0.6,
+     0.4
+    ]
+   ]
+  },
+  {
+   "id": "lazy",
+   "text": "The least surface for the most air. Nature, being efficient.",
+   "visual": "bubble",
+   "mode": "outro",
+   "kicker": "LEAST\n*SURFACE*",
+   "kickerWord": 1,
+   "sparkle": true
+  }
+ ]
+}

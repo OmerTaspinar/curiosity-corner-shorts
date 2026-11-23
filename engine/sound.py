@@ -162,6 +162,75 @@ def place(buf, x, at, gain=1.0):
     if x.ndim == 1: x = stereo(x)
     L = min(len(x), len(buf) - i); buf[i:i + L] += x[:L] * gain
 
+def braam(d=2.4):
+    """cinematic low brass-like hit for the hook"""
+    tt = t_(d); y = np.zeros(len(tt))
+    for f in (36.7, 55.0, 73.4, 110.0):
+        for det in (-0.15, 0.0, 0.13):
+            y += signal.sawtooth(2 * np.pi * f * 2 ** (det / 12) * tt + rs.random() * 6) / (1 + f / 60)
+    cut = 180 + 2200 * np.exp(-tt * 3.5)
+    out = np.zeros_like(y); edges = np.linspace(0, len(y), 41).astype(int); zi = None
+    for i in range(40):
+        sos = signal.butter(2, cut[edges[i]], 'low', fs=SR, output='sos')
+        if zi is None: zi = np.zeros((sos.shape[0], 2))
+        out[edges[i]:edges[i + 1]], zi = signal.sosfilt(sos, y[edges[i]:edges[i + 1]], zi=zi)
+    out *= env_adsr(len(tt), 0.02, 0.4, 0.55, 1.4); out = np.tanh(out / np.abs(out).max() * 2.2)
+    return reverb(stereo(out), 2.5, 0.3) * 0.7
+
+def thud():
+    tt = t_(0.5); f = 40 + 90 * np.exp(-tt * 35)
+    y = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-tt * 9) + bp(noise(len(tt)), 200, 2500) * np.exp(-tt * 45) * 0.4
+    return np.tanh(y * 1.6) * 0.7
+
+def fx_sound(name, d=1.0):
+    n = int(d * SR); tt = np.arange(n) / SR
+    if name == 'hit': return impact(1.4, 60, 30)
+    if name == 'explode':
+        y = lp(noise(int(2.5 * SR)), 300) * np.exp(-t_(2.5) * 2.2) * 1.4
+        return impact(1.8, 55, 28) + reverb(stereo(np.tanh(y)), 1.5, 0.3)[:int(1.8 * SR)] * 0.0 + np.pad(reverb(stereo(np.tanh(y)), 1.5, 0.3), ((0, 0), (0, 0)))[:int(1.8 * SR)]
+    if name == 'zap':
+        L = int(0.9 * SR); x = hp(noise(L), 1500) * np.exp(-t_(0.9) * 7)
+        cr = (rs.random(L) < 0.004).astype(float); x *= 0.4 + 2.5 * signal.lfilter([1], [1, -0.995], cr)
+        return reverb(stereo(np.tanh(x * 2) * 0.6 + thud() [:L] * 0 if False else np.tanh(x * 2) * 0.6), 1.2, 0.25)
+    if name == 'shatter':
+        L = int(1.6 * SR); y = hp(noise(L), 3000) * np.exp(-t_(1.6) * 9) * 0.6
+        for _ in range(40):
+            st = int(rs.uniform(0, 0.9) * SR); f = rs.uniform(2500, 7500); ln = L - st
+            y[st:] += np.sin(2 * np.pi * f * np.arange(ln) / SR) * np.exp(-np.arange(ln) / SR * rs.uniform(18, 40)) * 0.15
+        return reverb(np.stack([y, np.roll(y, 400)], 1), 1.4, 0.3)
+    if name == 'wind':
+        y = sweep_filter(noise(n), 300, 900, q=1.2) * (0.6 + 0.4 * np.sin(2 * np.pi * 0.4 * tt)) * env_adsr(n, 0.4, 0.2, 0.9, 0.6)
+        return np.stack([y, np.roll(y, 2000)], 1) * 0.8
+    if name == 'sizzle':
+        x = hp(noise(n), 4000) * 0.15; cr = (rs.random(n) < 0.002).astype(float)
+        x += hp(signal.lfilter([1], [1, -0.9], cr), 2000) * 0.8; return stereo(x * env_adsr(n, 0.1, 0.1, 0.9, 0.3), 0.1) * 0.7
+    if name == 'hum':
+        y = sum(np.sin(2 * np.pi * f * tt) / (i + 1) for i, f in enumerate([98, 196, 294, 392])) * env_adsr(n, 0.3, 0.1, 0.9, 0.4)
+        return stereo(lp(y, 900) * 0.35)
+    if name == 'rumble':
+        y = lp(noise(n), 140, 3) * 2.2 * env_adsr(n, 0.05, 0.4, 0.6, d * 0.5)
+        y *= 0.6 + 0.4 * np.abs(np.sin(2 * np.pi * 1.7 * tt + rs.random())); return reverb(stereo(np.tanh(y)), 2.0, 0.3)
+    if name == 'tone':
+        y = (np.sin(2 * np.pi * 1760 * tt) * 0.4 + np.sin(2 * np.pi * 2640 * tt) * 0.2) * (0.8 + 0.2 * np.sin(2 * np.pi * 6 * tt)) * env_adsr(n, 0.3, 0.1, 0.8, 0.4)
+        return reverb(stereo(y * 0.25), 1.5, 0.35)
+    if name == 'creak':
+        f = 70 * (1 + 0.3 * np.sin(2 * np.pi * 0.7 * tt)); src = np.exp(-((np.cumsum(f) / SR) % 1.0) * 6)
+        y = bp(src + noise(n) * 0.1, 200, 1200) * env_adsr(n, 0.2, 0.2, 0.8, 0.4); return reverb(stereo(y * 1.5), 1.6, 0.35)
+    if name == 'beep':
+        L = int(0.12 * SR); y = signal.square(2 * np.pi * 1200 * t_(0.12)) * 0.15 * env_adsr(L, 0.005, 0.02, 0.8, 0.03); return stereo(lp(y, 5000))
+    if name == 'click': return stereo(tick(True))
+    if name == 'bloop': return stereo(bloop(300 + rs.uniform(-60, 120)))
+    if name == 'swoosh': return whoosh(0.6, 0.55)
+    if name == 'riser': return riser(d)
+    if name == 'sparkle': return sparkle()
+    if name == 'pop': return stereo(pop(900))
+    if name == 'splash':
+        L = int(1.2 * SR); y = bp(noise(L), 400, 5000) * np.exp(-t_(1.2) * 5)
+        for _ in range(25):
+            st = int(rs.uniform(0.05, 0.8) * SR); y[st:st + int(0.1 * SR)] += bloop(rs.uniform(500, 1400), 0.1)[:max(0, min(int(0.1 * SR), L - st))] * 0.4
+        return reverb(stereo(y), 1.0, 0.2)
+    raise ValueError('unknown fx ' + name)
+
 # ---------------- arrangement ----------------
 def main(ep):
     spec = json.load(open(f"{ROOT}/episodes/{ep}/spec.json"))
@@ -181,6 +250,7 @@ def main(ep):
         sp = sc_by_id[s["id"]]; t0 = s["t0"]
         if i == 0:
             place(sfx, impact(), 0.0, 0.9)
+            if sp.get("slam", True) and spec.get("braam", True): place(sfx, braam(), 0.0, 0.75)
         else:
             w = whoosh(0.75, 0.6, pan_from=-0.8 if i % 2 else 0.8, pan_to=0.8 if i % 2 else -0.8)
             place(sfx, w, t0 - 0.45, 0.8)
@@ -189,7 +259,11 @@ def main(ep):
         if sp.get("kicker"):
             kw = sp.get("kickerWord"); kt = s["words"][kw]["s"] if kw is not None else t0 + 0.1
             nwords = len(sp["kicker"].replace("\n", " ").split())
-            for j in range(nwords): place(sfx, pop(780 + 140 * j), kt + j * 0.07, 0.5)
+            if i == 0 and sp.get("slam", True):
+                kt = s["words"][kw]["s"] if kw is not None else t0
+                for j in range(nwords): place(sfx, stereo(thud(), (-0.3 if j % 2 else 0.3)), kt + j * 0.13 + 0.15, 0.8)
+            else:
+                for j in range(nwords): place(sfx, pop(780 + 140 * j), kt + j * 0.07, 0.5)
         for (lt, d) in sp.get("growl", []):
             g = growl(d, seed=i, pitch=1.0 if i == 0 else 0.9 + 0.08 * i)
             gi = int((t0 + lt) * SR); L = min(len(g), N - gi); growl_track[gi:gi + L] += g[:L]
@@ -200,6 +274,9 @@ def main(ep):
         for bt in sp.get("beats", []):
             for j in range(5): place(sfx, stereo(bloop(260 + 70 * j + rs.uniform(-20, 20)), rs.uniform(-.5, .5)), t0 + bt - 0.1 + j * 0.07, 0.55)
             g = growl(0.8, seed=40 + int(bt * 10), pitch=1.15); gi = int((t0 + bt - 0.15) * SR); L = min(len(g), N - gi); growl_track[gi:gi + L] += g[:L] * 0.6
+        for cue in sp.get("fx", []):
+            name, lt = cue[0], cue[1]; d = cue[2] if len(cue) > 2 else 1.0; gain = cue[3] if len(cue) > 3 else 0.8
+            place(sfx, fx_sound(name, d), t0 + lt, gain)
         if sp.get("sparkle"):
             kw = sp.get("kickerWord"); kt = s["words"][kw]["s"] if kw is not None else t0
             place(sfx, riser(2.2), kt - 2.2, 0.55); place(sfx, sparkle(), kt, 0.7)

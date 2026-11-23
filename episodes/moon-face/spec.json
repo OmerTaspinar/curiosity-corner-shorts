@@ -1,0 +1,63 @@
+{
+ "slug": "moon-face",
+ "title": "Why we only see one side of the Moon",
+ "theme": "space",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "You have never seen the back of the Moon.",
+   "visual": "moon",
+   "mode": "hero",
+   "kicker": "THE MOON'S\n*HIDDEN* SIDE",
+   "captions": false
+  },
+  {
+   "id": "same",
+   "text": "The Moon always shows us the same face.",
+   "visual": "moon",
+   "mode": "orbit",
+   "kicker": "SAME *FACE*",
+   "kickerWord": 6
+  },
+  {
+   "id": "spin",
+   "text": "Not because it doesn't spin. It spins exactly once per orbit, about every 27 days.",
+   "visual": "moon",
+   "mode": "spin",
+   "kicker": "*27* DAYS",
+   "kickerWord": 13
+  },
+  {
+   "id": "bulge",
+   "text": "Long ago it spun faster, but Earth's gravity stretched it into a slight bulge.",
+   "visual": "moon",
+   "mode": "bulge"
+  },
+  {
+   "id": "lock",
+   "text": "Tugging on that bulge slowed its spin until it locked.",
+   "visual": "moon",
+   "mode": "lock",
+   "fx": [
+    [
+     "hit",
+     2.0,
+     1,
+     0.4
+    ]
+   ]
+  },
+  {
+   "id": "tidal",
+   "text": "It's called tidal locking, and Earth's own spin is slowly slowing too.",
+   "visual": "moon",
+   "mode": "outro",
+   "kicker": "TIDAL\n*LOCKING*",
+   "kickerWord": 2
+  }
+ ]
+}

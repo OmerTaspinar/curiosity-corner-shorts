@@ -1,0 +1,78 @@
+{
+ "slug": "saturn-floats",
+ "title": "Saturn would float in water",
+ "theme": "space",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Saturn would float in water.",
+   "visual": "saturn",
+   "mode": "hero",
+   "kicker": "SATURN WOULD\n*FLOAT*",
+   "captions": false
+  },
+  {
+   "id": "size",
+   "text": "It's big enough to hold more than 700 Earths.",
+   "visual": "saturn",
+   "mode": "earths",
+   "kicker": "*700+* EARTHS",
+   "kickerWord": 7
+  },
+  {
+   "id": "gas",
+   "text": "But it's made mostly of hydrogen and helium, the lightest elements.",
+   "visual": "saturn",
+   "mode": "gas",
+   "kicker": "*H* + *HE*",
+   "kickerWord": 5
+  },
+  {
+   "id": "density",
+   "text": "Its average density is lower than water's.",
+   "visual": "compare",
+   "compare": {
+    "items": [
+     {
+      "label": "SATURN",
+      "value": 0.69,
+      "text": "0.69",
+      "color": "#e8c37a"
+     },
+     {
+      "label": "WATER",
+      "value": 1.0,
+      "text": "1.00",
+      "color": "#4fc3ff"
+     }
+    ]
+   }
+  },
+  {
+   "id": "bathtub",
+   "text": "So in a big enough bathtub, Saturn would float.",
+   "visual": "saturn",
+   "mode": "bath",
+   "kicker": "BIG ENOUGH\n*BATHTUB*",
+   "kickerWord": 5,
+   "fx": [
+    [
+     "splash",
+     0.8,
+     1,
+     0.7
+    ]
+   ]
+  },
+  {
+   "id": "joke",
+   "text": "Just don't ask where you'd find the bathtub.",
+   "visual": "saturn",
+   "mode": "outro"
+  }
+ ]
+}

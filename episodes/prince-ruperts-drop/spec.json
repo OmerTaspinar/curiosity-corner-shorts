@@ -1,0 +1,105 @@
+{
+ "slug": "prince-ruperts-drop",
+ "title": "The glass a hammer can't break",
+ "theme": "steel",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "This glass survives a hammer, but not a pinch.",
+   "visual": "drop",
+   "mode": "hero",
+   "kicker": "HAMMER-PROOF\n*GLASS*",
+   "captions": false,
+   "fx": [
+    [
+     "hit",
+     0.5,
+     1,
+     0.8
+    ]
+   ]
+  },
+  {
+   "id": "make",
+   "text": "Drip molten glass into cold water, and you get a Prince Rupert's drop.",
+   "visual": "drop",
+   "mode": "make",
+   "fx": [
+    [
+     "splash",
+     0.9,
+     1,
+     0.7
+    ],
+    [
+     "sizzle",
+     1.1,
+     2,
+     0.4
+    ]
+   ]
+  },
+  {
+   "id": "squeeze",
+   "text": "The outside cools first and locks the inside in, squeezing the surface hard.",
+   "visual": "drop",
+   "mode": "stress",
+   "kicker": "*SQUEEZED* SHELL",
+   "kickerWord": 9
+  },
+  {
+   "id": "hammer",
+   "text": "That compression lets the head shrug off hammer blows.",
+   "visual": "drop",
+   "mode": "hammer",
+   "fx": [
+    [
+     "hit",
+     0.9,
+     1,
+     0.7
+    ],
+    [
+     "hit",
+     1.9,
+     1,
+     0.7
+    ]
+   ]
+  },
+  {
+   "id": "tail",
+   "text": "But snip the thin tail, and a crack races inside at about 1,500 meters per second.",
+   "visual": "drop",
+   "mode": "crack",
+   "kicker": "*1,500* M/S",
+   "kickerWord": 12,
+   "fx": [
+    [
+     "click",
+     1.1
+    ]
+   ]
+  },
+  {
+   "id": "powder",
+   "text": "In a blink, the whole drop explodes into powder.",
+   "visual": "drop",
+   "mode": "powder",
+   "kicker": "*POWDER*",
+   "kickerWord": 8,
+   "fx": [
+    [
+     "shatter",
+     0.9,
+     1.5,
+     1.0
+    ]
+   ]
+  }
+ ]
+}

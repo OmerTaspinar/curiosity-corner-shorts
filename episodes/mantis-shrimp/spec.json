@@ -1,0 +1,115 @@
+{
+ "slug": "mantis-shrimp",
+ "title": "The fastest punch on Earth",
+ "theme": "ocean",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "This is the fastest punch on Earth.",
+   "visual": "shrimp",
+   "mode": "hero",
+   "kicker": "FASTEST PUNCH\nON *EARTH*",
+   "captions": false,
+   "fx": [
+    [
+     "hit",
+     0.9,
+     1,
+     0.8
+    ]
+   ]
+  },
+  {
+   "id": "speed",
+   "text": "The peacock mantis shrimp swings its club at up to 23 meters per second, underwater.",
+   "visual": "shrimp",
+   "mode": "speed",
+   "kicker": "*23* M/S",
+   "kickerWord": 10,
+   "fx": [
+    [
+     "swoosh",
+     2.6,
+     0.5,
+     0.7
+    ]
+   ]
+  },
+  {
+   "id": "spring",
+   "text": "A spring in its arm stores energy like a loaded crossbow.",
+   "visual": "shrimp",
+   "mode": "spring",
+   "kicker": "LOADED\n*SPRING*",
+   "kickerWord": 1,
+   "fx": [
+    [
+     "creak",
+     0.4,
+     2,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": "cavitate",
+   "text": "The strike is so fast, it rips the water open into a vapor bubble.",
+   "visual": "shrimp",
+   "mode": "bubble",
+   "kicker": "*CAVITATION*",
+   "kickerWord": 12,
+   "fx": [
+    [
+     "hit",
+     0.6,
+     1,
+     0.7
+    ],
+    [
+     "bloop",
+     1.4
+    ]
+   ]
+  },
+  {
+   "id": "collapse",
+   "text": "When that bubble collapses, it hits the prey a second time.",
+   "visual": "shrimp",
+   "mode": "collapse",
+   "kicker": "HIT *#2*",
+   "kickerWord": 9,
+   "fx": [
+    [
+     "hit",
+     1.0,
+     1,
+     0.9
+    ],
+    [
+     "shatter",
+     1.1,
+     1,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": "outro",
+   "text": "Two hits from one punch. Snail shells don't stand a chance.",
+   "visual": "shrimp",
+   "mode": "outro",
+   "fx": [
+    [
+     "shatter",
+     0.8,
+     1,
+     0.7
+    ]
+   ]
+  }
+ ]
+}

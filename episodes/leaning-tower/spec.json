@@ -1,0 +1,89 @@
+{
+ "slug": "leaning-tower",
+ "title": "Why the Leaning Tower hasn't fallen",
+ "theme": "city",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "This tower should have fallen centuries ago.",
+   "visual": "pisa",
+   "mode": "hero",
+   "kicker": "IT SHOULD\nHAVE *FALLEN*",
+   "captions": false,
+   "fx": [
+    [
+     "creak",
+     0.5,
+     1.5,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": "tilt",
+   "text": "Pisa's tower started tilting in 1178, five years into construction.",
+   "visual": "pisa",
+   "mode": "build",
+   "kicker": "*1178*",
+   "kickerWord": 5,
+   "pron": {
+    "1178": "ɪlˈɛvən sˈɛvənti ˈeɪt"
+   }
+  },
+  {
+   "id": "soil",
+   "text": "Its foundation is only three meters deep, sitting on soft clay.",
+   "visual": "pisa",
+   "mode": "soil",
+   "kicker": "*3 M* DEEP",
+   "kickerWord": 4
+  },
+  {
+   "id": "1990",
+   "text": "By 1990, it leaned so far that engineers feared collapse and closed it.",
+   "visual": "pisa",
+   "mode": "danger",
+   "fx": [
+    [
+     "creak",
+     0.5,
+     3,
+     0.6
+    ]
+   ]
+  },
+  {
+   "id": "fix",
+   "text": "Their fix: carefully pull soil out from under the high side, a little at a time.",
+   "visual": "pisa",
+   "mode": "extract",
+   "fx": [
+    [
+     "click",
+     1.6
+    ],
+    [
+     "click",
+     2.4
+    ],
+    [
+     "click",
+     3.2
+    ]
+   ]
+  },
+  {
+   "id": "result",
+   "text": "It settled back about 44 centimeters. Still leaning, just safely.",
+   "visual": "pisa",
+   "mode": "result",
+   "kicker": "*44 CM*\nSTRAIGHTER",
+   "kickerWord": 4,
+   "sparkle": true
+  }
+ ]
+}

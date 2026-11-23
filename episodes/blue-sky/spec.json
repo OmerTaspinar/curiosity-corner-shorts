@@ -1,0 +1,70 @@
+{
+ "slug": "blue-sky",
+ "title": "Why the sky is blue, not white",
+ "theme": "sky",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Sunlight is white. So why is the sky blue?",
+   "visual": "sky",
+   "mode": "hero",
+   "kicker": "WHY ISN'T THE\nSKY *WHITE*?",
+   "captions": false
+  },
+  {
+   "id": "white",
+   "text": "Sunlight contains every color, mixed into white.",
+   "visual": "sky",
+   "mode": "prism",
+   "kicker": "EVERY *COLOR*",
+   "kickerWord": 2
+  },
+  {
+   "id": "scatter",
+   "text": "When it hits the air, tiny nitrogen and oxygen molecules scatter it.",
+   "visual": "sky",
+   "mode": "scatter",
+   "fx": [
+    [
+     "bloop",
+     1.2
+    ],
+    [
+     "bloop",
+     1.6
+    ],
+    [
+     "bloop",
+     2.1
+    ]
+   ]
+  },
+  {
+   "id": "five",
+   "text": "Short blue waves scatter far more than long red ones, about five times more.",
+   "visual": "sky",
+   "mode": "waves",
+   "kicker": "*5X* MORE",
+   "kickerWord": 11
+  },
+  {
+   "id": "everywhere",
+   "text": "So blue light bounces all over the sky and reaches your eyes from every direction.",
+   "visual": "sky",
+   "mode": "dome"
+  },
+  {
+   "id": "sunset",
+   "text": "At sunset, light crosses much more air. The blue scatters away, leaving reds and oranges.",
+   "visual": "sky",
+   "mode": "sunset",
+   "kicker": "*SUNSET*",
+   "kickerWord": 1,
+   "sparkle": true
+  }
+ ]
+}

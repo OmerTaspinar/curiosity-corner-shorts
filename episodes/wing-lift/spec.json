@@ -1,0 +1,102 @@
+{
+ "slug": "wing-lift",
+ "title": "How wings really make lift",
+ "theme": "sky",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Your teacher probably got this wrong.",
+   "visual": "wing",
+   "mode": "hero",
+   "kicker": "YOUR TEACHER\nGOT THIS *WRONG*",
+   "captions": false,
+   "fx": [
+    [
+     "wind",
+     0,
+     2,
+     0.4
+    ]
+   ]
+  },
+  {
+   "id": "myth",
+   "text": "The classic story says air over a wing must race to meet the air below at the back.",
+   "visual": "wing",
+   "mode": "myth",
+   "fx": [
+    [
+     "wind",
+     0,
+     5,
+     0.4
+    ]
+   ]
+  },
+  {
+   "id": "early",
+   "text": "But air over the top actually arrives way earlier. Nothing forces them to meet.",
+   "visual": "wing",
+   "mode": "early",
+   "kicker": "EQUAL TIME\n*MYTH*",
+   "kickerWord": 8,
+   "fx": [
+    [
+     "wind",
+     0,
+     4,
+     0.4
+    ]
+   ]
+  },
+  {
+   "id": "turn",
+   "text": "What really happens: the tilted, curved wing turns a huge mass of air downward.",
+   "visual": "wing",
+   "mode": "turn",
+   "fx": [
+    [
+     "wind",
+     0,
+     4,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": "pressure",
+   "text": "That creates lower pressure above and higher pressure below.",
+   "visual": "wing",
+   "mode": "pressure",
+   "fx": [
+    [
+     "wind",
+     0,
+     3,
+     0.4
+    ]
+   ]
+  },
+  {
+   "id": "newton",
+   "text": "Push air down, and the air pushes the wing up.",
+   "visual": "wing",
+   "mode": "up",
+   "kicker": "AIR DOWN,\nWING *UP*",
+   "kickerWord": 9,
+   "fx": [
+    [
+     "swoosh",
+     0.9,
+     0.6,
+     0.6
+    ]
+   ],
+   "sparkle": true
+  }
+ ]
+}

@@ -1,0 +1,82 @@
+{
+ "slug": "steel-ships",
+ "title": "How steel ships float",
+ "theme": "ocean",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Steel sinks. So how do steel ships float?",
+   "visual": "ship",
+   "mode": "hero",
+   "kicker": "STEEL SINKS.\nSHIPS *DON'T*.",
+   "captions": false,
+   "fx": [
+    [
+     "splash",
+     1.0,
+     1,
+     0.6
+    ]
+   ]
+  },
+  {
+   "id": "dense",
+   "text": "A block of steel is about eight times denser than water. It drops straight down.",
+   "visual": "ship",
+   "mode": "block",
+   "kicker": "*8X* DENSER",
+   "kickerWord": 6,
+   "fx": [
+    [
+     "splash",
+     2.4,
+     1,
+     0.7
+    ],
+    [
+     "bloop",
+     3.0
+    ]
+   ]
+  },
+  {
+   "id": "hull",
+   "text": "But shape that steel into a hull, and most of its volume is air.",
+   "visual": "ship",
+   "mode": "hull"
+  },
+  {
+   "id": "displace",
+   "text": "The hull pushes aside a huge amount of water.",
+   "visual": "ship",
+   "mode": "displace",
+   "fx": [
+    [
+     "splash",
+     0.6,
+     1,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": "push",
+   "text": "Water pushes back with a force equal to the weight it moved.",
+   "visual": "ship",
+   "mode": "buoy",
+   "kicker": "ARCHIMEDES'\n*PRINCIPLE*",
+   "kickerWord": 0
+  },
+  {
+   "id": "floats",
+   "text": "As long as the ship weighs less than that water, it floats.",
+   "visual": "ship",
+   "mode": "outro",
+   "sparkle": true
+  }
+ ]
+}

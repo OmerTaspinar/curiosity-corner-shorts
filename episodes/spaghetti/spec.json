@@ -1,0 +1,104 @@
+{
+ "slug": "spaghetti",
+ "title": "Why spaghetti never breaks in half",
+ "theme": "fire",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "You can't snap spaghetti in half.",
+   "visual": "noodle",
+   "mode": "hero",
+   "kicker": "YOU CAN'T SNAP\nSPAGHETTI *IN HALF*",
+   "captions": false,
+   "fx": [
+    [
+     "shatter",
+     1.2,
+     1,
+     0.7
+    ]
+   ]
+  },
+  {
+   "id": "pieces",
+   "text": "Bend a dry noodle and it shatters into three or more pieces.",
+   "visual": "noodle",
+   "mode": "shatter",
+   "kicker": "*3+* PIECES",
+   "kickerWord": 8,
+   "fx": [
+    [
+     "shatter",
+     1.4,
+     1,
+     0.8
+    ]
+   ]
+  },
+  {
+   "id": "feynman",
+   "text": "Even Richard Feynman lost a whole night to this puzzle.",
+   "visual": "noodle",
+   "mode": "pile",
+   "kicker": "FEYNMAN'S\n*PUZZLE*",
+   "kickerWord": 2
+  },
+  {
+   "id": "wave",
+   "text": "The first crack makes each half whip back so hard, a wave races down the noodle and breaks it again.",
+   "visual": "noodle",
+   "mode": "wave",
+   "fx": [
+    [
+     "swoosh",
+     1.6,
+     0.6,
+     0.6
+    ],
+    [
+     "shatter",
+     3.4,
+     1,
+     0.6
+    ]
+   ]
+  },
+  {
+   "id": "twist",
+   "text": "In 2018, MIT found the trick: twist it about 270 degrees, then bend.",
+   "visual": "noodle",
+   "mode": "twist",
+   "kicker": "*270°* TWIST",
+   "kickerWord": 9,
+   "fx": [
+    [
+     "creak",
+     0.8,
+     2.2,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": "clean",
+   "text": "The twist soaks up that snap-back. Two clean halves.",
+   "visual": "noodle",
+   "mode": "clean",
+   "kicker": "TWO CLEAN\n*HALVES*",
+   "kickerWord": 6,
+   "fx": [
+    [
+     "hit",
+     1.0,
+     1,
+     0.5
+    ]
+   ],
+   "sparkle": true
+  }
+ ]
+}

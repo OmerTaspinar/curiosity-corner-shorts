@@ -1,0 +1,96 @@
+{
+ "slug": "leidenfrost",
+ "title": "Water that floats on a hot pan",
+ "theme": "fire",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Water can float on a hot pan.",
+   "visual": "pan",
+   "mode": "hero",
+   "kicker": "WATER THAT\n*FLOATS*",
+   "captions": false,
+   "fx": [
+    [
+     "sizzle",
+     0,
+     2,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": "sizzle",
+   "text": "Drip it on a pan around 100 degrees Celsius, and it sizzles away in seconds.",
+   "visual": "pan",
+   "mode": "boil",
+   "kicker": "*100°C*",
+   "kickerWord": 6,
+   "fx": [
+    [
+     "sizzle",
+     0.4,
+     3.5,
+     0.8
+    ]
+   ]
+  },
+  {
+   "id": "hotter",
+   "text": "But heat the pan past about 200 degrees, and the drop survives much longer.",
+   "visual": "pan",
+   "mode": "hot",
+   "kicker": "*200°C*",
+   "kickerWord": 6
+  },
+  {
+   "id": "steam",
+   "text": "The bottom of the drop vaporizes instantly, building a cushion of steam thinner than a hair.",
+   "visual": "pan",
+   "mode": "cushion",
+   "kicker": "STEAM\n*CUSHION*",
+   "kickerWord": 9,
+   "fx": [
+    [
+     "sizzle",
+     0,
+     4,
+     0.3
+    ]
+   ]
+  },
+  {
+   "id": "skate",
+   "text": "The drop hovers on it, skating around without ever touching the metal.",
+   "visual": "pan",
+   "mode": "skate",
+   "fx": [
+    [
+     "swoosh",
+     1,
+     0.6,
+     0.4
+    ],
+    [
+     "swoosh",
+     2.4,
+     0.6,
+     0.4
+    ]
+   ]
+  },
+  {
+   "id": "name",
+   "text": "It's called the Leidenfrost effect. Hotter pan, longer life.",
+   "visual": "pan",
+   "mode": "outro",
+   "kicker": "LEIDENFROST\n*EFFECT*",
+   "kickerWord": 3,
+   "sparkle": true
+  }
+ ]
+}

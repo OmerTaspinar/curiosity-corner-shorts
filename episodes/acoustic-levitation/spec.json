@@ -1,0 +1,90 @@
+{
+ "slug": "acoustic-levitation",
+ "title": "Sound that makes things float",
+ "theme": "default",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Sound can make things float.",
+   "visual": "levitator",
+   "mode": "hero",
+   "kicker": "SOUND CAN MAKE\nTHINGS *FLOAT*",
+   "captions": false,
+   "fx": [
+    [
+     "tone",
+     0.3,
+     1.5,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": "arrays",
+   "text": "Two arrays of tiny speakers fire ultrasound at each other, too high for you to hear.",
+   "visual": "levitator",
+   "mode": "arrays",
+   "fx": [
+    [
+     "tone",
+     0,
+     4,
+     0.4
+    ]
+   ]
+  },
+  {
+   "id": "standing",
+   "text": "The waves overlap into a standing wave, with fixed spots of calm called nodes.",
+   "visual": "levitator",
+   "mode": "standing",
+   "kicker": "STANDING\n*WAVE*",
+   "kickerWord": 5
+  },
+  {
+   "id": "pressure",
+   "text": "Around each node, sound pressure pushes in from above and below.",
+   "visual": "levitator",
+   "mode": "pressure"
+  },
+  {
+   "id": "bead",
+   "text": "Drop a tiny bead there, and it hangs in midair, trapped by sound.",
+   "visual": "levitator",
+   "mode": "beads",
+   "fx": [
+    [
+     "pop",
+     0.9,
+     1,
+     0.5
+    ],
+    [
+     "pop",
+     1.4,
+     1,
+     0.5
+    ],
+    [
+     "pop",
+     1.9,
+     1,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": "labs",
+   "text": "Scientists use it to hold chemicals without touching any container.",
+   "visual": "levitator",
+   "mode": "drop",
+   "kicker": "NO *TOUCH*",
+   "kickerWord": 7,
+   "sparkle": true
+  }
+ ]
+}

@@ -1,0 +1,90 @@
+{
+ "slug": "gps-relativity",
+ "title": "Your GPS needs Einstein",
+ "theme": "space",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Your phone's GPS depends on Einstein.",
+   "visual": "gps",
+   "mode": "hero",
+   "kicker": "GPS NEEDS\n*EINSTEIN*",
+   "captions": false
+  },
+  {
+   "id": "clocks",
+   "text": "GPS satellites carry atomic clocks, about 20,000 kilometers up.",
+   "visual": "gps",
+   "mode": "orbit",
+   "kicker": "*20,000* KM",
+   "kickerWord": 6
+  },
+  {
+   "id": "gravity",
+   "text": "Up there, weaker gravity makes their clocks run fast, by about 45 microseconds a day.",
+   "visual": "gps",
+   "mode": "gravity",
+   "kicker": "*+45* µS / DAY",
+   "kickerWord": 11,
+   "fx": [
+    [
+     "click",
+     0.5
+    ],
+    [
+     "click",
+     1.0
+    ],
+    [
+     "click",
+     1.5
+    ],
+    [
+     "click",
+     2.0
+    ]
+   ]
+  },
+  {
+   "id": "speed",
+   "text": "Their speed slows them by about 7. Net result: 38 microseconds fast, every day.",
+   "visual": "bigStat",
+   "stat": {
+    "from": 0,
+    "to": 38,
+    "prefix": "+",
+    "unit": "MICROSECONDS / DAY",
+    "color": "#62f0ff"
+   }
+  },
+  {
+   "id": "drift",
+   "text": "Uncorrected, your location would drift about 10 kilometers a day.",
+   "visual": "gps",
+   "mode": "drift",
+   "kicker": "*10 KM* OFF",
+   "kickerWord": 6,
+   "fx": [
+    [
+     "swoosh",
+     1.2,
+     0.6,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": "fix",
+   "text": "So engineers set the clocks to tick slower before launch. Relativity, in your pocket.",
+   "visual": "gps",
+   "mode": "phone",
+   "kicker": "RELATIVITY\n*IN YOUR POCKET*",
+   "kickerWord": 10,
+   "sparkle": true
+  }
+ ]
+}

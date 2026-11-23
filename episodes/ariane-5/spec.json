@@ -1,0 +1,124 @@
+{
+ "slug": "ariane-5",
+ "title": "The number that blew up a rocket",
+ "theme": "space",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "One number blew up this rocket.",
+   "visual": "rocket",
+   "mode": "hero",
+   "kicker": "ONE NUMBER\n*BLEW UP* A ROCKET",
+   "captions": false,
+   "fx": [
+    [
+     "rumble",
+     0,
+     2,
+     0.6
+    ]
+   ]
+  },
+  {
+   "id": "launch",
+   "text": "June 4, 1996. The brand-new Ariane 5 lifts off for the first time.",
+   "visual": "rocket",
+   "mode": "launch",
+   "kicker": "ARIANE *5*",
+   "kickerWord": 5,
+   "fx": [
+    [
+     "rumble",
+     0,
+     4.5,
+     0.8
+    ]
+   ],
+   "pron": {
+    "Ariane": "ˌæɹiˈæn"
+   }
+  },
+  {
+   "id": "convert",
+   "text": "Thirty-seven seconds in, its computer tries to squeeze a 64-bit number into a 16-bit space.",
+   "visual": "rocket",
+   "mode": "bits",
+   "kicker": "64-BIT INTO\n*16-BIT*",
+   "kickerWord": 9,
+   "fx": [
+    [
+     "beep",
+     1.0
+    ],
+    [
+     "beep",
+     1.5
+    ],
+    [
+     "beep",
+     2.0
+    ]
+   ]
+  },
+  {
+   "id": "crash",
+   "text": "The number is too big. The software crashes, and the rocket veers off course.",
+   "visual": "rocket",
+   "mode": "veer",
+   "fx": [
+    [
+     "beep",
+     0.3
+    ],
+    [
+     "beep",
+     0.5
+    ],
+    [
+     "beep",
+     0.7
+    ],
+    [
+     "swoosh",
+     2.4,
+     0.6,
+     0.6
+    ]
+   ]
+  },
+  {
+   "id": "boom",
+   "text": "It breaks apart and self-destructs.",
+   "visual": "rocket",
+   "mode": "boom",
+   "fx": [
+    [
+     "explode",
+     0.15,
+     2,
+     1.0
+    ]
+   ]
+  },
+  {
+   "id": "cost",
+   "text": "The bug came from reused Ariane 4 code. Cost: over 370 million dollars.",
+   "visual": "bigStat",
+   "stat": {
+    "from": 0,
+    "to": 370,
+    "prefix": "$",
+    "suffix": "M+",
+    "unit": "ONE OVERFLOW ERROR",
+    "color": "#ff7a3d"
+   },
+   "pron": {
+    "Ariane": "ˌæɹiˈæn"
+   }
+  }
+ ]
+}

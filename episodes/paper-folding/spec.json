@@ -1,0 +1,92 @@
+{
+ "slug": "paper-folding",
+ "title": "Fold paper 42 times to reach the Moon",
+ "theme": "space",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Fold paper 42 times, and you'd reach the Moon.",
+   "visual": "paper",
+   "mode": "hero",
+   "kicker": "42 FOLDS TO\nTHE *MOON*",
+   "captions": false
+  },
+  {
+   "id": "double",
+   "text": "Every fold doubles the thickness.",
+   "visual": "paper",
+   "mode": "double",
+   "kicker": "*X2*",
+   "kickerWord": 2,
+   "fx": [
+    [
+     "pop",
+     0.4
+    ],
+    [
+     "pop",
+     0.9
+    ],
+    [
+     "pop",
+     1.4
+    ]
+   ]
+  },
+  {
+   "id": "seven",
+   "text": "A sheet a tenth of a millimeter thick passes a centimeter after just 7 folds.",
+   "visual": "paper",
+   "mode": "seven",
+   "kicker": "*7* FOLDS",
+   "kickerWord": 13
+  },
+  {
+   "id": "twenty",
+   "text": "After 20 folds, it's taller than a 30-story building.",
+   "visual": "paper",
+   "mode": "tower",
+   "kicker": "*20* FOLDS",
+   "kickerWord": 1,
+   "fx": [
+    [
+     "riser",
+     0,
+     2.5,
+     0.4
+    ]
+   ]
+  },
+  {
+   "id": "moon",
+   "text": "After 42, it's about 440,000 kilometers. Past the Moon.",
+   "visual": "paper",
+   "mode": "moon",
+   "kicker": "*440,000* KM",
+   "kickerWord": 4,
+   "fx": [
+    [
+     "swoosh",
+     0.3,
+     0.6,
+     0.7
+    ]
+   ]
+  },
+  {
+   "id": "record",
+   "text": "The real record? Just 12 folds, by student Britney Gallivan in 2002.",
+   "visual": "bigStat",
+   "stat": {
+    "from": 0,
+    "to": 12,
+    "unit": "FOLDS: REAL-WORLD RECORD",
+    "color": "#ffd84d"
+   }
+  }
+ ]
+}

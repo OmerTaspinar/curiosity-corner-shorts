@@ -1,0 +1,61 @@
+{
+ "slug": "mirror-flip",
+ "title": "Mirrors don't flip left and right",
+ "theme": "default",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Mirrors don't flip left and right.",
+   "visual": "mirror",
+   "mode": "hero",
+   "kicker": "MIRRORS DON'T\nFLIP *LEFT* & *RIGHT*",
+   "captions": false
+  },
+  {
+   "id": "hand",
+   "text": "Raise your right hand, and your reflection raises the hand on the same side.",
+   "visual": "mirror",
+   "mode": "hand"
+  },
+  {
+   "id": "updown",
+   "text": "Your head stays up, your feet stay down. Nothing swaps sideways.",
+   "visual": "mirror",
+   "mode": "updown"
+  },
+  {
+   "id": "depth",
+   "text": "What a mirror actually flips is front and back.",
+   "visual": "mirror",
+   "mode": "depth",
+   "kicker": "IT FLIPS\n*FRONT* & *BACK*",
+   "kickerWord": 6,
+   "fx": [
+    [
+     "swoosh",
+     0.6,
+     0.6,
+     0.6
+    ]
+   ]
+  },
+  {
+   "id": "nose",
+   "text": "Your nose points at the mirror. Your reflection's nose points back at you.",
+   "visual": "mirror",
+   "mode": "nose"
+  },
+  {
+   "id": "brain",
+   "text": "Your brain just imagines walking around to stand where the reflection is.",
+   "visual": "mirror",
+   "mode": "walk",
+   "kicker": "IT'S YOUR\n*BRAIN*",
+   "kickerWord": 1
+  }
+ ]
+}

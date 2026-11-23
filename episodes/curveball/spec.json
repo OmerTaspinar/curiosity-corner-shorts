@@ -1,0 +1,97 @@
+{
+ "slug": "curveball",
+ "title": "Why a spinning ball curves",
+ "theme": "default",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "A spinning ball can bend in midair.",
+   "visual": "ball",
+   "mode": "hero",
+   "kicker": "THIS BALL\n*BENDS*",
+   "captions": false,
+   "fx": [
+    [
+     "swoosh",
+     0.6,
+     0.6,
+     0.7
+    ]
+   ]
+  },
+  {
+   "id": "throw",
+   "text": "Throw it with heavy spin, and it curves away from a straight line.",
+   "visual": "ball",
+   "mode": "throw",
+   "fx": [
+    [
+     "swoosh",
+     1.0,
+     0.6,
+     0.6
+    ]
+   ]
+  },
+  {
+   "id": "drag",
+   "text": "The spinning surface drags a thin layer of air around with it.",
+   "visual": "ball",
+   "mode": "drag",
+   "fx": [
+    [
+     "wind",
+     0,
+     3,
+     0.4
+    ]
+   ]
+  },
+  {
+   "id": "wake",
+   "text": "That flings the air behind the ball off to one side.",
+   "visual": "ball",
+   "mode": "wake",
+   "fx": [
+    [
+     "wind",
+     0,
+     3,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": "push",
+   "text": "Push air one way, and the ball gets pushed the other.",
+   "visual": "ball",
+   "mode": "push",
+   "kicker": "MAGNUS\n*EFFECT*",
+   "kickerWord": 6
+  },
+  {
+   "id": "sports",
+   "text": "That's the Magnus effect. Curveballs, free kicks and topspin all use it.",
+   "visual": "ball",
+   "mode": "outro",
+   "fx": [
+    [
+     "swoosh",
+     0.8,
+     0.6,
+     0.6
+    ],
+    [
+     "swoosh",
+     2.0,
+     0.6,
+     0.6
+    ]
+   ]
+  }
+ ]
+}

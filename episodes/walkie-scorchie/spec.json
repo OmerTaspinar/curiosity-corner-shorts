@@ -1,0 +1,74 @@
+{
+ "slug": "walkie-scorchie",
+ "title": "The skyscraper that melted a car",
+ "theme": "city",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "This skyscraper melted a car.",
+   "visual": "tower",
+   "mode": "hero",
+   "kicker": "THIS BUILDING\n*MELTED* A CAR",
+   "captions": false
+  },
+  {
+   "id": "london",
+   "text": "London, 2013. A new tower nicknamed the Walkie-Talkie.",
+   "visual": "tower",
+   "mode": "orbit",
+   "kicker": "THE *WALKIE-TALKIE*",
+   "kickerWord": 7
+  },
+  {
+   "id": "curve",
+   "text": "Its south side curves inward and is covered in glass.",
+   "visual": "tower",
+   "mode": "curve"
+  },
+  {
+   "id": "mirror",
+   "text": "That curve works like a giant concave mirror, focusing sunlight onto the street below.",
+   "visual": "tower",
+   "mode": "rays",
+   "fx": [
+    [
+     "riser",
+     1.0,
+     2.5,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": "melt",
+   "text": "A parked Jaguar's mirror, badge and panels melted in the hot spot.",
+   "visual": "tower",
+   "mode": "car",
+   "kicker": "*MELTED*",
+   "kickerWord": 7,
+   "fx": [
+    [
+     "sizzle",
+     0.5,
+     3,
+     0.6
+    ]
+   ]
+  },
+  {
+   "id": "scorchie",
+   "text": "Locals nicknamed it the Walkie-Scorchie, and the owners added a sunshade.",
+   "visual": "tower",
+   "mode": "shade",
+   "kicker": "WALKIE-\n*SCORCHIE*",
+   "kickerWord": 4,
+   "pron": {
+    "Walkie-Scorchie": "wˈɔːki skˈɔːɹtʃi"
+   }
+  }
+ ]
+}

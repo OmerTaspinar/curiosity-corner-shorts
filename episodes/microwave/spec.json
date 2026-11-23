@@ -1,0 +1,95 @@
+{
+ "slug": "microwave",
+ "title": "Microwaves don't cook from the inside",
+ "theme": "default",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Microwaves don't cook from the inside out.",
+   "visual": "micro",
+   "mode": "hero",
+   "kicker": "NOT FROM\nTHE *INSIDE*",
+   "captions": false,
+   "fx": [
+    [
+     "hum",
+     0,
+     2,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": "waves",
+   "text": "A microwave oven fills with waves that flip direction 2.45 billion times a second.",
+   "visual": "micro",
+   "mode": "waves",
+   "kicker": "*2.45* BILLION\nPER SECOND",
+   "kickerWord": 9,
+   "fx": [
+    [
+     "hum",
+     0,
+     4.5,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": "dipole",
+   "text": "Water molecules are lopsided, with a positive end and a negative end.",
+   "visual": "micro",
+   "mode": "dipole",
+   "kicker": "*+* AND *-*",
+   "kickerWord": 6
+  },
+  {
+   "id": "spin",
+   "text": "So they keep twisting to line up with the field, back and forth.",
+   "visual": "micro",
+   "mode": "spin",
+   "fx": [
+    [
+     "hum",
+     0,
+     3.5,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": "heat",
+   "text": "All that jostling becomes heat.",
+   "visual": "micro",
+   "mode": "heat",
+   "kicker": "*HEAT*",
+   "kickerWord": 4
+  },
+  {
+   "id": "depth",
+   "text": "But the waves only reach a few centimeters in. The middle cooks as heat flows inward.",
+   "visual": "micro",
+   "mode": "depth",
+   "kicker": "OUTSIDE\n*IN*",
+   "kickerWord": 15,
+   "fx": [
+    [
+     "beep",
+     4.0
+    ],
+    [
+     "beep",
+     4.25
+    ],
+    [
+     "beep",
+     4.5
+    ]
+   ]
+  }
+ ]
+}

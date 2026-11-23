@@ -1,0 +1,92 @@
+{
+ "slug": "millennium-bridge",
+ "title": "The bridge footsteps made wobble",
+ "theme": "city",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Footsteps made this bridge wobble.",
+   "visual": "mbridge",
+   "mode": "hero",
+   "kicker": "FOOTSTEPS SHOOK\nTHIS *BRIDGE*",
+   "captions": false
+  },
+  {
+   "id": "open",
+   "text": "London, June 2000. The new Millennium Bridge opens.",
+   "visual": "mbridge",
+   "mode": "open",
+   "kicker": "MILLENNIUM\n*BRIDGE*",
+   "kickerWord": 5
+  },
+  {
+   "id": "sway",
+   "text": "As crowds cross, the deck sways slightly side to side.",
+   "visual": "mbridge",
+   "mode": "sway"
+  },
+  {
+   "id": "sync",
+   "text": "To keep their balance, people adjust their steps, in time with the sway.",
+   "visual": "mbridge",
+   "mode": "sync",
+   "kicker": "IN *SYNC*",
+   "kickerWord": 9,
+   "fx": [
+    [
+     "click",
+     0.5
+    ],
+    [
+     "click",
+     1.0
+    ],
+    [
+     "click",
+     1.5
+    ],
+    [
+     "click",
+     2.0
+    ],
+    [
+     "click",
+     2.5
+    ],
+    [
+     "click",
+     3.0
+    ]
+   ]
+  },
+  {
+   "id": "feedback",
+   "text": "That pushes the bridge even more, and more people fall into step.",
+   "visual": "mbridge",
+   "mode": "wobble",
+   "fx": [
+    [
+     "creak",
+     0.3,
+     3,
+     0.6
+    ]
+   ]
+  },
+  {
+   "id": "fix",
+   "text": "Two days later, it closed. Engineers added 91 dampers before reopening in 2002.",
+   "visual": "bigStat",
+   "stat": {
+    "from": 0,
+    "to": 91,
+    "unit": "DAMPERS ADDED",
+    "color": "#7fd1ff"
+   }
+  }
+ ]
+}

@@ -1,0 +1,115 @@
+{
+ "slug": "tacoma-narrows",
+ "title": "The bridge the wind tore apart",
+ "theme": "storm",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Wind tore this bridge apart.",
+   "visual": "bridge",
+   "mode": "hero",
+   "kicker": "WIND TORE\nTHIS BRIDGE *APART*",
+   "captions": false,
+   "fx": [
+    [
+     "wind",
+     0,
+     2,
+     0.7
+    ]
+   ]
+  },
+  {
+   "id": "gertie",
+   "text": "November 1940. The Tacoma Narrows Bridge, nicknamed Galloping Gertie.",
+   "visual": "bridge",
+   "mode": "calm",
+   "kicker": "GALLOPING\n*GERTIE*",
+   "kickerWord": 7,
+   "fx": [
+    [
+     "wind",
+     0,
+     4,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": "wind",
+   "text": "Winds of only about 64 kilometers per hour hit its thin, flexible deck.",
+   "visual": "bridge",
+   "mode": "wind",
+   "kicker": "*64* KM/H",
+   "kickerWord": 4,
+   "fx": [
+    [
+     "wind",
+     0,
+     4,
+     0.8
+    ]
+   ]
+  },
+  {
+   "id": "twist",
+   "text": "The deck started twisting, and every twist made the wind push harder.",
+   "visual": "bridge",
+   "mode": "twist",
+   "fx": [
+    [
+     "creak",
+     0.5,
+     3,
+     0.7
+    ],
+    [
+     "wind",
+     0,
+     4,
+     0.6
+    ]
+   ]
+  },
+  {
+   "id": "flutter",
+   "text": "Engineers call it aeroelastic flutter: a feedback loop that feeds on itself.",
+   "visual": "bridge",
+   "mode": "flutter",
+   "kicker": "AEROELASTIC\n*FLUTTER*",
+   "kickerWord": 3,
+   "fx": [
+    [
+     "creak",
+     0,
+     4,
+     0.6
+    ]
+   ]
+  },
+  {
+   "id": "fall",
+   "text": "In about an hour, the center span ripped loose and fell into the water.",
+   "visual": "bridge",
+   "mode": "collapse",
+   "fx": [
+    [
+     "explode",
+     1.4,
+     2,
+     0.8
+    ],
+    [
+     "splash",
+     2.6,
+     1,
+     0.8
+    ]
+   ]
+  }
+ ]
+}

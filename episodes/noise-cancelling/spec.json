@@ -1,0 +1,93 @@
+{
+ "slug": "noise-cancelling",
+ "title": "Erasing sound with sound",
+ "theme": "default",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Your headphones erase sound with sound.",
+   "visual": "anc",
+   "mode": "hero",
+   "kicker": "ERASING SOUND\nWITH *SOUND*",
+   "captions": false,
+   "fx": [
+    [
+     "hum",
+     0,
+     1.6,
+     0.6
+    ]
+   ]
+  },
+  {
+   "id": "wave",
+   "text": "Sound is a wave of high and low air pressure.",
+   "visual": "anc",
+   "mode": "wave",
+   "fx": [
+    [
+     "hum",
+     0,
+     3,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": "mic",
+   "text": "Tiny microphones on your headphones listen to the noise around you.",
+   "visual": "anc",
+   "mode": "mic",
+   "fx": [
+    [
+     "hum",
+     0,
+     3.5,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": "anti",
+   "text": "A chip creates the exact opposite wave: highs where the noise has lows.",
+   "visual": "anc",
+   "mode": "anti",
+   "kicker": "*ANTI*-NOISE",
+   "kickerWord": 5,
+   "fx": [
+    [
+     "hum",
+     0,
+     3.5,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": "cancel",
+   "text": "When the two waves meet, they cancel each other out.",
+   "visual": "anc",
+   "mode": "cancel",
+   "kicker": "= *SILENCE*",
+   "kickerWord": 6,
+   "fx": [
+    [
+     "hum",
+     0,
+     1.6,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": "planes",
+   "text": "It works best on steady, low hums, like engines. That's why planes go quiet.",
+   "visual": "anc",
+   "mode": "plane"
+  }
+ ]
+}

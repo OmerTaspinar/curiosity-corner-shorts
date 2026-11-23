@@ -1,0 +1,69 @@
+{
+ "slug": "spinning-top",
+ "title": "Why a spinning top doesn't fall",
+ "theme": "default",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Why doesn't a spinning top fall over?",
+   "visual": "top",
+   "mode": "hero",
+   "kicker": "WHY DOESN'T IT\n*FALL*?",
+   "captions": false
+  },
+  {
+   "id": "still",
+   "text": "Stand a top up without spin, and gravity tips it over instantly.",
+   "visual": "top",
+   "mode": "tip",
+   "fx": [
+    [
+     "hit",
+     2.2,
+     1,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": "momentum",
+   "text": "But when it spins, every part is whirling in a circle, carrying angular momentum.",
+   "visual": "top",
+   "mode": "spin",
+   "kicker": "ANGULAR\n*MOMENTUM*",
+   "kickerWord": 12
+  },
+  {
+   "id": "nudge",
+   "text": "Gravity still pulls, but instead of tipping the top, it nudges the spin axis sideways.",
+   "visual": "top",
+   "mode": "axis"
+  },
+  {
+   "id": "precess",
+   "text": "So the top slowly circles. That's precession.",
+   "visual": "top",
+   "mode": "precess",
+   "kicker": "*PRECESSION*",
+   "kickerWord": 6
+  },
+  {
+   "id": "fall",
+   "text": "Friction steals the spin, the wobble grows, and only then does it fall.",
+   "visual": "top",
+   "mode": "fall",
+   "fx": [
+    [
+     "hit",
+     3.4,
+     1,
+     0.5
+    ]
+   ]
+  }
+ ]
+}

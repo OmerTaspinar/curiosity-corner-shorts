@@ -1,0 +1,96 @@
+{
+ "slug": "fog-harvesting",
+ "title": "People drink water pulled from fog",
+ "theme": "ocean",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "People drink water pulled out of fog.",
+   "visual": "fog",
+   "mode": "hero",
+   "kicker": "DRINKING\n*FOG*",
+   "captions": false,
+   "fx": [
+    [
+     "wind",
+     0,
+     2,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": "desert",
+   "text": "Chile's Atacama is one of the driest places on Earth.",
+   "visual": "fog",
+   "mode": "desert",
+   "kicker": "ATACAMA\n*DESERT*",
+   "kickerWord": 1,
+   "fx": [
+    [
+     "wind",
+     0,
+     3.5,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": "fog",
+   "text": "But thick fog rolls in from the Pacific.",
+   "visual": "fog",
+   "mode": "roll",
+   "fx": [
+    [
+     "wind",
+     0,
+     3,
+     0.6
+    ]
+   ]
+  },
+  {
+   "id": "nets",
+   "text": "Locals hang fine mesh nets in its path.",
+   "visual": "fog",
+   "mode": "net"
+  },
+  {
+   "id": "drip",
+   "text": "Tiny droplets stick to the mesh, merge, and trickle down into gutters.",
+   "visual": "fog",
+   "mode": "drip",
+   "fx": [
+    [
+     "bloop",
+     1.2
+    ],
+    [
+     "bloop",
+     1.9
+    ],
+    [
+     "bloop",
+     2.6
+    ],
+    [
+     "bloop",
+     3.2
+    ]
+   ]
+  },
+  {
+   "id": "liters",
+   "text": "On good days, one square meter of net can catch several liters of water. No pumps, no power.",
+   "visual": "fog",
+   "mode": "tank",
+   "kicker": "LITERS\n*FROM AIR*",
+   "kickerWord": 11,
+   "sparkle": true
+  }
+ ]
+}

@@ -1,0 +1,77 @@
+{
+ "slug": "ice-floats",
+ "title": "Ice shouldn't float",
+ "theme": "ice",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Ice shouldn't float.",
+   "visual": "ice",
+   "mode": "hero",
+   "kicker": "ICE SHOULDN'T\n*FLOAT*",
+   "captions": false,
+   "fx": [
+    [
+     "splash",
+     0.3,
+     1,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": "rule",
+   "text": "Almost every substance gets denser when it freezes, so its solid sinks.",
+   "visual": "ice",
+   "mode": "sink",
+   "fx": [
+    [
+     "bloop",
+     2.2
+    ]
+   ]
+  },
+  {
+   "id": "weird",
+   "text": "Water is the weird one.",
+   "visual": "ice",
+   "mode": "weird",
+   "kicker": "WATER IS\n*WEIRD*",
+   "kickerWord": 0
+  },
+  {
+   "id": "lattice",
+   "text": "As it freezes, hydrogen bonds lock the molecules into an open, hexagonal lattice.",
+   "visual": "ice",
+   "mode": "lattice",
+   "kicker": "*HEXAGONS*",
+   "kickerWord": 12,
+   "fx": [
+    [
+     "sparkle",
+     1.6,
+     1,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": "gaps",
+   "text": "Those gaps make ice about 9 percent less dense than liquid water.",
+   "visual": "ice",
+   "mode": "gaps",
+   "kicker": "*9%* LIGHTER",
+   "kickerWord": 5
+  },
+  {
+   "id": "lake",
+   "text": "So ice floats, lakes freeze from the top down, and fish survive the winter.",
+   "visual": "ice",
+   "mode": "lake"
+  }
+ ]
+}

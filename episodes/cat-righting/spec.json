@@ -1,0 +1,69 @@
+{
+ "slug": "cat-righting",
+ "title": "How cats always land on their feet",
+ "theme": "default",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Cats seem to break the laws of physics.",
+   "visual": "cat",
+   "mode": "hero",
+   "kicker": "CATS VS\n*PHYSICS*",
+   "captions": false
+  },
+  {
+   "id": "fall",
+   "text": "A falling cat has nothing to push against, yet it flips upright.",
+   "visual": "cat",
+   "mode": "flip",
+   "fx": [
+    [
+     "swoosh",
+     1.2,
+     0.6,
+     0.6
+    ]
+   ]
+  },
+  {
+   "id": "bend",
+   "text": "The trick: it bends in the middle, turning into two halves.",
+   "visual": "cat",
+   "mode": "split",
+   "kicker": "*TWO* HALVES",
+   "kickerWord": 9
+  },
+  {
+   "id": "tuck",
+   "text": "The front tucks its legs and spins fast, while the back stretches out and barely turns.",
+   "visual": "cat",
+   "mode": "front"
+  },
+  {
+   "id": "swap",
+   "text": "Then it swaps: tuck the back, stretch the front.",
+   "visual": "cat",
+   "mode": "back"
+  },
+  {
+   "id": "reflex",
+   "text": "Total spin stays zero, so no law is broken. It's called the righting reflex.",
+   "visual": "cat",
+   "mode": "land",
+   "kicker": "RIGHTING\n*REFLEX*",
+   "kickerWord": 12,
+   "fx": [
+    [
+     "hit",
+     2.6,
+     1,
+     0.4
+    ]
+   ]
+  }
+ ]
+}

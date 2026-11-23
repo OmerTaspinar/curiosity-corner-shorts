@@ -1,0 +1,110 @@
+{
+ "slug": "lightning-sun",
+ "title": "Lightning is hotter than the Sun",
+ "theme": "storm",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Lightning is hotter than the Sun's surface.",
+   "visual": "storm",
+   "mode": "hero",
+   "kicker": "HOTTER THAN\nTHE *SUN*",
+   "captions": false,
+   "fx": [
+    [
+     "zap",
+     0.5,
+     1,
+     0.9
+    ],
+    [
+     "rumble",
+     0.8,
+     2,
+     0.6
+    ]
+   ]
+  },
+  {
+   "id": "compare",
+   "text": "The Sun's surface is about 5,500 degrees Celsius. A lightning bolt heats the air to around 30,000.",
+   "visual": "compare",
+   "theme": "storm",
+   "compare": {
+    "stagger": 2.0,
+    "items": [
+     {
+      "label": "SUN",
+      "value": 5500,
+      "text": "5,500°C",
+      "color": "#ffb347"
+     },
+     {
+      "label": "LIGHTNING",
+      "value": 30000,
+      "text": "30,000°C",
+      "color": "#b9c4ff"
+     }
+    ]
+   },
+   "fx": [
+    [
+     "zap",
+     3.4,
+     1,
+     0.6
+    ]
+   ]
+  },
+  {
+   "id": "brief",
+   "text": "That's five times hotter, but only for a few millionths of a second.",
+   "visual": "storm",
+   "mode": "slowmo",
+   "kicker": "*5X* HOTTER",
+   "kickerWord": 1
+  },
+  {
+   "id": "expand",
+   "text": "The air expands so violently, it creates a shock wave.",
+   "visual": "storm",
+   "mode": "shock",
+   "kicker": "SHOCK\n*WAVE*",
+   "kickerWord": 8,
+   "fx": [
+    [
+     "hit",
+     0.8,
+     1,
+     0.8
+    ]
+   ]
+  },
+  {
+   "id": "thunder",
+   "text": "That's thunder: the sound of air exploding.",
+   "visual": "storm",
+   "mode": "thunder",
+   "kicker": "*THUNDER*",
+   "kickerWord": 1,
+   "fx": [
+    [
+     "zap",
+     0.1,
+     1,
+     0.8
+    ],
+    [
+     "rumble",
+     0.3,
+     3,
+     1.0
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,73 @@
+{
+ "slug": "glass-transparent",
+ "title": "Why glass is see-through",
+ "theme": "steel",
+ "voice": {
+  "name": "am_michael",
+  "speed": 1.08
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "text": "Glass is solid. So why can you see through it?",
+   "visual": "glass",
+   "mode": "hero",
+   "kicker": "WHY IS GLASS\n*SEE-THROUGH*?",
+   "captions": false
+  },
+  {
+   "id": "photons",
+   "text": "Light travels as tiny packets of energy called photons.",
+   "visual": "glass",
+   "mode": "photons",
+   "kicker": "*PHOTONS*",
+   "kickerWord": 8
+  },
+  {
+   "id": "absorb",
+   "text": "In most materials, electrons soak up visible photons, blocking the light.",
+   "visual": "glass",
+   "mode": "absorb",
+   "fx": [
+    [
+     "pop",
+     1.6
+    ],
+    [
+     "pop",
+     2.1
+    ]
+   ]
+  },
+  {
+   "id": "gap",
+   "text": "But in glass, electrons need a bigger energy jump than visible light can give.",
+   "visual": "glass",
+   "mode": "gap",
+   "kicker": "ENERGY\n*GAP*",
+   "kickerWord": 7
+  },
+  {
+   "id": "through",
+   "text": "So visible photons can't be absorbed. They pass straight through.",
+   "visual": "glass",
+   "mode": "through",
+   "fx": [
+    [
+     "swoosh",
+     1.4,
+     0.6,
+     0.5
+    ]
+   ]
+  },
+  {
+   "id": "uv",
+   "text": "Higher-energy ultraviolet is a different story. Glass absorbs much of it.",
+   "visual": "glass",
+   "mode": "uv",
+   "kicker": "*UV* BLOCKED",
+   "kickerWord": 1
+  }
+ ]
+}
