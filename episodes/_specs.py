@@ -97,10 +97,10 @@ EPISODES = [
  dict(slug="gps-relativity", title="Your GPS needs Einstein", theme="space", scenes=[
   S("hook", "Your phone's GPS depends on Einstein.", "gps", mode="hero", kicker="GPS NEEDS\n*EINSTEIN*", captions=False),
   S("clocks", "GPS satellites carry atomic clocks, about 20,000 kilometers up.", "gps", mode="orbit", kicker="*20,000* KM", kickerWord=6),
-  S("gravity", "Up there, weaker gravity makes their clocks run fast, by about 45 microseconds a day.", "gps", mode="gravity", kicker="*+45* µS / DAY", kickerWord=11, fx=[["click", .5], ["click", 1.0], ["click", 1.5], ["click", 2.0]]),
-  S("speed", "Their speed slows them by about 7. Net result: 38 microseconds fast, every day.", "bigStat", stat={"from": 0, "to": 38, "prefix": "+", "unit": "MICROSECONDS / DAY", "color": "#62f0ff"}),
+  S("gravity", "Up there, weaker gravity makes their clocks run fast: 45 microseconds a day.", "gps", mode="gravity", kicker="*+45* µS / DAY", kickerWord=9, fx=[["click", .5], ["click", 1.0], ["click", 1.5], ["click", 2.0]]),
+  S("speed", "Speed slows them by 7. Net: 38 microseconds fast, daily.", "bigStat", stat={"from": 0, "to": 38, "prefix": "+", "unit": "MICROSECONDS / DAY", "color": "#62f0ff"}),
   S("drift", "Uncorrected, your location would drift about 10 kilometers a day.", "gps", mode="drift", kicker="*10 KM* OFF", kickerWord=6, fx=[["swoosh", 1.2, .6, .5]]),
-  S("fix", "So engineers set the clocks to tick slower before launch. Relativity, in your pocket.", "gps", mode="phone", kicker="RELATIVITY\n*IN YOUR POCKET*", kickerWord=10, sparkle=True),
+  S("fix", "So engineers make them tick slower before launch. Relativity, in your pocket.", "gps", mode="phone", kicker="RELATIVITY\n*IN YOUR POCKET*", kickerWord=8, sparkle=True),
  ]),
  dict(slug="mantis-shrimp", title="The fastest punch on Earth", theme="ocean", scenes=[
   S("hook", "This is the fastest punch on Earth.", "shrimp", mode="hero", kicker="FASTEST PUNCH\nON *EARTH*", captions=False, fx=[["hit", .9, 1, .8]]),

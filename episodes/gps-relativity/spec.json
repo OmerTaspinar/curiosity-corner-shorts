@@ -25,11 +25,11 @@
   },
   {
    "id": "gravity",
-   "text": "Up there, weaker gravity makes their clocks run fast, by about 45 microseconds a day.",
+   "text": "Up there, weaker gravity makes their clocks run fast: 45 microseconds a day.",
    "visual": "gps",
    "mode": "gravity",
    "kicker": "*+45* µS / DAY",
-   "kickerWord": 11,
+   "kickerWord": 9,
    "fx": [
     [
      "click",
@@ -51,7 +51,7 @@
   },
   {
    "id": "speed",
-   "text": "Their speed slows them by about 7. Net result: 38 microseconds fast, every day.",
+   "text": "Speed slows them by 7. Net: 38 microseconds fast, daily.",
    "visual": "bigStat",
    "stat": {
     "from": 0,
@@ -79,11 +79,11 @@
   },
   {
    "id": "fix",
-   "text": "So engineers set the clocks to tick slower before launch. Relativity, in your pocket.",
+   "text": "So engineers make them tick slower before launch. Relativity, in your pocket.",
    "visual": "gps",
    "mode": "phone",
    "kicker": "RELATIVITY\n*IN YOUR POCKET*",
-   "kickerWord": 10,
+   "kickerWord": 8,
    "sparkle": true
   }
  ]

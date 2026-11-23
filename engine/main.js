@@ -32,7 +32,7 @@ window.renderAt = (t) => {
   const i = scenes.findIndex(s => t >= s.t0 && t < s.t1); const sc = scenes[i < 0 ? scenes.length - 1 : i];
   for (const s of scenes) { s.group.visible = s === sc; if (s.group.userData.ov) s.group.userData.ov.visible = s === sc; }
   const lt = t - sc.t0, dur = sc.t1 - sc.t0;
-  stage.shake = 0; stage.camera.position.set(0, 0, 11); stage.camera.rotation.set(0, 0, 0); stage.camera.fov = 32; stage.camera.updateProjectionMatrix();
+  stage.shake = 0; stage.flashExtra = 0; stage.camera.position.set(0, 0, 11); stage.camera.rotation.set(0, 0, 0); stage.camera.fov = 32; stage.camera.updateProjectionMatrix();
   stage.setTheme(sc.theme || EP.spec.theme || 'default'); stage.bgMat.uniforms.uGlowAmt.value = 0.3;
   stage.scene.updateMatrixWorld(true);
   sc.def.update(sc.group, lt, dur, t, sc);
@@ -45,7 +45,7 @@ window.renderAt = (t) => {
     trans = Math.max(Math.pow(clamp(1 - t / 0.45), 2), tout * 0.7); flash = 0.55 * Math.pow(clamp(1 - t / 0.25), 2);
     for (const L of slamLands) { const d = t - L; if (d > 0 && d < 0.4) { const k = Math.exp(-d * 14); stage.shake += 2.2 * k; trans = Math.max(trans, 0.45 * k); flash = Math.max(flash, 0.12 * k); } }
   }
-  stage.fx.uniforms.uTrans.value = trans; stage.fx.uniforms.uFlash.value = flash;
+  stage.fx.uniforms.uTrans.value = trans; stage.fx.uniforms.uFlash.value = Math.max(flash, stage.flashExtra || 0);
   stage.render(t);
 };
 window.EPINFO = { duration: timing.duration, scenes: scenes.map(s => ({ id: s.id, t0: s.t0, t1: s.t1 })) };
